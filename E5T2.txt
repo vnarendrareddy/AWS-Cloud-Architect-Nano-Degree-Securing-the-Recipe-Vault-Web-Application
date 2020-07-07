@@ -1,0 +1,44 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+
+Regula->for Terraform -configurations and compliance violations prior to deployment.
+
+### Example vulnerability
+Capturing the misconfigure items like policy to have access to all objects etc
+Ex: 
+  "Statement": [
+    {
+      "Action": [
+        "*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+
+
+##Scan AMI’s or containers for OS vulnerabilities
+AWS Inspector:
+Mainly used for static scanning.
+scurity assessment service that helps improve the security and compliance of applications/Isntances
+
+Other tools like clair, sysdig etc are available for dynamic scanning. 
+
+
+### Example vulnerability
+High
+Today at 12:50 PM (GMT-7) (6 hours ago)
+On instance i-0fe97a960cc855279, UDP port 23 which is associated with 'Telnet' is reachable from the internet
+Assessment-Target-All-Instances -> Name:Web Service Instance - C3
+Assessment-Template-Default
+Network Reachability-1.1
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+
+AWS Config collects configuration snapshots of many of the core infrastructure services that AWS provides. When Config is enabled, you will have insight into how a particular resource is configured, when it changed, and what was changed.
+The configuration snapshot serves as an input to rules which evaluate whether the configuration is in compliance or out of compliance with the conditions specified in the rule
+
+### Example vulnerability
+Checks whether HTTP to HTTPS redirection is configured on all HTTP listeners of Application Load Balancers. The rule is NON_COMPLIANT if one or more HTTP listeners of Application Load Balancers do not have HTTP to HTTPS redirection configured.
+Checks whether the EBS volumes that are in an attached state are encrypted. If you specify the ID of a KMS key for encryption using the kmsId parameter, the rule checks if the EBS volumes in an attached state are encrypted with that KMS key.

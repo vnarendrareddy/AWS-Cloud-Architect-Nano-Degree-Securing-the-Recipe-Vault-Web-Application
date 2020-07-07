@@ -1,0 +1,13 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+
+S3 buckets created using the cloud formation script doesnt have the default server side encryption enabled. 
+With out the server side connection ,the contents of the files are visible to everyone. we should always start with the least privilege access and contents should be accessible and visible to only with appropriate access/privilege.  
+Secondly, it doesnt have versioning enabled. Its always good practice to maintain versions for important documents to recover if something unexpected happens . In this scenario the secret receipe is an imporant document.
+Both the buckets are accessible by the public. The bucets and objects should not be public and restricted to only users that have access. 
+Bucket can only be public if it is holding any static website data
+
+
+# Poor practice 2
+DefaultPublicRoute andf DefaultPrivateRoute is on CidrBlock: 0.0.0.0/0 which will allow all traffic. The securtiy group and The Private subnet should not allow all the traffic and should be restricted by configuring Network firewall and set the rules which could block and save from the attackers.

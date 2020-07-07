@@ -1,0 +1,17 @@
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+Add the Route 53 and  Cloud front -which will restrict user permsissions , provides both network and application level protection
+Plan to Move the webinstance from public subnet to private subnet
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket
+ An endpoint policy does not override or replace IAM user policies . So no.
+
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+No. Existing data will not get encrypted. only New data gets encrypted.
+
+# What would happen if the original cloud formation templates are applied to this environment
+ we cannot apply the same cloud formation templates with same name. It will fail saying the stack already exisits. 
+ if we rename the stack and then apply the cloud formation,all the changes we have done will be lost and it will go back to initial state. 
+ 
+ 
+

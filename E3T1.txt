@@ -1,0 +1,11 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+ GuardDuty findings detected an  Unauthorized access:Ec2/SSH Brute Force attack on to and from my instances. 
+ The Instance details are 1) i-072e5a57639e7841b and i-0fe97a960cc855279
+  i-072e5a57639e7841b is performing SSH brute force attacks against 10.***.**.***.  This is the actor
+   10.***.**.*** s performing SSH brute force attacks against i-0fe97a960cc855279.  This is the target
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources: VPC Flow Logs, AWS CloudTrail event logs, and DNS logs.
+In our scenario, we enabled the VPC Flow Logs which will capture the IP traffice to and from network interfaces, help us monitor the traffic that is reacing our instance i.e number of requests from an instance and capture the ip address(i.e source addrs, port, protocol used , interface id etc) from which it is initiated and how it is initiated.. in our case it is SSH brute force attach. 

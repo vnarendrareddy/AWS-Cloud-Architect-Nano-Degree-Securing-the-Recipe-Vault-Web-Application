@@ -1,0 +1,11 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+1) Security groups are not configured correctly. 
+2) EC2 Volumes are not encrypted
+3) Traffic is allowed from 0.0.0.0 i.e all ports are open.
+4) Security on the webservice 
+
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+Use Network ACL to restrict the traffic, Configure/update the security groups to restrict the traffic and not allow everything , remove the access from the internet for ports that needs to be secured like port 22 etc
