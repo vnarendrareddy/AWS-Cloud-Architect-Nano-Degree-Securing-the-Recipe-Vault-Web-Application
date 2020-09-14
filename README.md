@@ -475,6 +475,3 @@ Once your project has been submitted and reviewed - to prevent undesired charges
 - Delete your cloud formation stacks.
 
 ## _Optional Standout Suggestion_ Exercise 7 - Enjoying the Spoils of Your Good Security Work!
-
-Bake one of the desserts from the recipe text files and submit a picture. :-)
-
